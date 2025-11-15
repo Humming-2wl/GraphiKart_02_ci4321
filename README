@@ -1,0 +1,28 @@
+Grupo:
+  "El Nido del Buho"
+
+Integrantes:
+  - Isaac Liendo (19-10076)
+
+Nombre del juego:
+  "GraphiKart"
+
+Intrucciones:
+  
+  Para correr el juego:
+    - Clonar el repositorio
+    - Instalar nodejs y npm
+      - Pasos para Debian 12 --> https://reintech.io/blog/installing-nodejs-npm-debian-12
+      - Pasos en general (Option 1) --> https://threejs.org/manual/#en/installation
+    - Instalar three y vite con los comandos especificados en el link de arriba en la carpeta del juego
+    - Ejecutar "npx vite"
+    - Copiar el enlace mostrado en la terminal e ir al navegador para abrirlo
+  
+  De las mecánicas del juego:
+    - Teclas WASD para moverse.
+    - Teclas BNM para cambiar la camara a tercera persona frente, primera persona frente, primera persona atrás respectivamente.
+    - Tecla ESPACIO para usar los powerups.
+    - Tecla G (God Mode), mientras se preciona se pueden seleccionar los powerups "proyectil triple", "bomba", "acelerador" y "acelerador triple" con las teclas 1, 2, 3 y 4 respectivamente.
+
+Video explicando el juego --> https://youtu.be/joZAtIIUU1E
+  
