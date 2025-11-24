@@ -20,5 +20,6 @@ export function build_track()
   material = new three.MeshStandardMaterial({color: 0xA0A0A0})
   track = new three.Mesh(geometry, material);
   track.name = "track"
+  track.receiveShadow = true
   return track;
 }
