@@ -639,7 +639,7 @@ function update_ui()
   // speed meter
   let speed_meter_mod = (kart_funcs.last_velocity / kart_funcs.max_velocity) * 0.25
   if (speed_meter_mod < 0) speed_meter_mod *= -1
-  camera.children[0].children[1].material.map.offset.y = 0.5 - speed_meter_mod
+  camera.children[0].children[1].children[0].material.map.offset.y = 0.5 - speed_meter_mod
   
   // score board
   layout_funcs.update_score_board_ui()

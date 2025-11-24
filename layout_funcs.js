@@ -320,12 +320,13 @@ export function build_ui()
   material = new three.MeshBasicMaterial({map: powerup_textures[0]})
   mesh = new three.Mesh(geometry, material)
   mesh.name = "ui item"
-  mesh.scale.set(0.1, 0.1, 0.1)
   let tmp = (window.innerWidth / window.innerHeight)
-  mesh.position.set(-0.7 * tmp, 0.7 - 0.08, 0)
+  mesh.scale.set(0.06 * tmp, 0.06 * tmp, 0.1)
+  mesh.position.set(-0.6 * tmp, 0.28 * tmp, 0)
   container.add(mesh)
   
-  // speed meter
+  // speed meter (inside a container)
+  let speed_meter_container = new three.Object3D()
 
   // mark
   let tex, alpha
@@ -337,9 +338,7 @@ export function build_ui()
   material = new three.MeshBasicMaterial({map: tex, alphaMap: alpha, transparent: true})
   mesh = new three.Mesh(geometry, material)
   mesh.name = "ui speed meter"
-  mesh.scale.set(0.3, 0.3, 0.3)
-  mesh.position.set(0.57 * tmp, -0.58 + 0.18, 0)
-  container.add(mesh)
+  speed_meter_container.add(mesh)
   
   // words
   tex = (new three.TextureLoader()).load("images/speed_meter_words.png")
@@ -348,10 +347,10 @@ export function build_ui()
   material = new three.MeshBasicMaterial({map: tex, alphaMap: alpha, transparent: true})
   mesh = new three.Mesh(geometry, material)
   mesh.name = "ui speed meter"
-  mesh.scale.set(0.28, 0.08, 0.3)
   mesh.rotation.z = Math.PI / 2
-  mesh.position.set(0.73 * tmp, -0.58 + 0.18, 0)
-  container.add(mesh)
+  mesh.scale.set(1, 0.3, 1)
+  mesh.position.set(1.15, 0, 0)
+  speed_meter_container.add(mesh)
   
   // scale
   tex = (new three.TextureLoader()).load("images/speed_meter_scale.png")
@@ -360,10 +359,13 @@ export function build_ui()
   material = new three.MeshBasicMaterial({map: tex, alphaMap: alpha, transparent: true})
   mesh = new three.Mesh(geometry, material)
   mesh.name = "ui speed meter"
-  mesh.scale.set(0.33, 0.34, 0.34)
-  mesh.position.set(0.546 * tmp, -0.546 + 0.21, 0)
-  container.add(mesh)
+  mesh.position.set(-0.15, 0.15, 0)
+  mesh.scale.set(1.03, 1, 1)
+  speed_meter_container.add(mesh)
   
+  speed_meter_container.position.set(0.5 * tmp, -0.5 + 0.21, 0)
+  speed_meter_container.scale.set(0.18 * tmp, 0.18 * tmp, 1)
+  container.add(speed_meter_container)
   
   // don't share the same array for UVs, always make a new one!
   // accessing a "shared" array makes the UV stuff to corrupt or something like
@@ -381,8 +383,8 @@ export function build_ui()
   alpha = (new three.TextureLoader()).load("images/sm64_numbers_alpha.png")
   material = new three.MeshBasicMaterial({map: tex, alphaMap: alpha, transparent: true})
   mesh = new three.Mesh(geometry, material)
-  mesh.scale.set(0.07, 0.07, 0.07)
-  mesh.position.set(0.7 * tmp - 1, 0.7 - 0.1, 0)
+  mesh.scale.set(0.04 * tmp, 0.04 * tmp, 0.1)
+  mesh.position.set(0.1 * tmp, 0.28 * tmp, 0)
   mesh.name = "ui score board"
   score_board = mesh
   container.add(mesh)
